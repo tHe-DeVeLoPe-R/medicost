@@ -1,0 +1,30 @@
+{
+  "name": "serverapi",
+  "version": "1.0.0",
+  "description": "server api to scrap data",
+  "main": "'",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tHe-DeVeLoPe-R/medicost.git"
+  },
+  "keywords": [
+    "node",
+    "javascript",
+    "scrap",
+    "healthcare"
+  ],
+  "author": "saad zafar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tHe-DeVeLoPe-R/medicost/issues"
+  },
+  "homepage": "https://github.com/tHe-DeVeLoPe-R/medicost#readme",
+  "dependencies": {
+    "express": "^4.21.0",
+    "nodemon": "^3.1.7"
+  }
+}
