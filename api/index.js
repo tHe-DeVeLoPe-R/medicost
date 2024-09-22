@@ -4,11 +4,11 @@ const axios = require('axios');
 const cheerio = require('cheerio');
 const puppeteer = require('puppeteer');
 
+
 const app = express();
 app.use(express.json());
 app.use(cors());
 const port = 5000;
-const functions = require('firebase-functions');
 
 app.listen(port, (req, res) => {
     console.log('app running on port 5000');
@@ -63,14 +63,14 @@ async function scrapeProductDetail(link) {
     }
 }
 
-// Endpoint to combine both scrapes and return data
-app.get('/scrape', async (req, res) => {
-    // Extract the medicine name from the query parameter
-    const medicine = req.query.medicine;
+// POST endpoint to combine both scrapes and return data
+app.post('/scrape', async (req, res) => {
+    // Extract the medicine name from the POST request body
+    const { medicine } = req.body;
 
     // Validate that a medicine name was provided
     if (!medicine) {
-        return res.status(400).json({ error: 'Please provide a medicine name in the query.' });
+        return res.status(400).json({ error: 'Please provide a medicine name in the request body.' });
     }
 
     // First scrape: Search page for name, price, discount, and link
@@ -96,4 +96,4 @@ app.get('/scrape', async (req, res) => {
     }
 });
 
-exports.api = functions.https.onRequest(app);
+
