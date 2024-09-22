@@ -1,0 +1,9 @@
+{
+
+    "routes":[
+       {
+        "src": "/scrape",
+        "dest": "/scrape"
+       }
+    ]
+}
