@@ -1,21 +1,19 @@
 {
   "name": "serverapi",
   "version": "1.0.0",
-  "description": "server api to scrap data",
-  "main": "index.js",
+  "description": "server api to scrape data",
+  "main": "api/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js",
-    "deploy": "firebase deploy --only functions:api"
+    "start": "node api/index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tHe-DeVeLoPe-R/medicost.git"
+    "url": "https://github.com/tHe-DeVeLoPe-R/medicost.git"
   },
   "keywords": [
     "node",
     "javascript",
-    "scrap",
+    "scrape",
     "healthcare"
   ],
   "author": "saad zafar",
@@ -29,12 +27,16 @@
     "cheerio": "^1.0.0",
     "cors": "^2.8.5",
     "express": "^4.21.0",
-    "firebase-admin": "^12.5.0",
-    "firebase-functions": "^6.0.1",
-    "nodemon": "^3.1.7",
-    "puppeteer": "^23.4.0"
+    "puppeteer": "^23.4.0",
+    "nodemon": "^3.1.7"
   },
   "engines": {
-    "node": "18"
+    "node": "18.x"
+  },
+  "puppeteer": {
+    "args": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox"
+    ]
   }
 }
